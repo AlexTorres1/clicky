@@ -3,62 +3,23 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-function Navbar() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
-        Pupster
-      </Link>
-      <div>
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link
-              to="/"
-              className={
-                window.location.pathname === "/" || window.location.pathname === "/about"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              About
-            </Link>
+export const Navbar = () => (
+    <div>
+    <nav className="navbar navbar-expand-lg  ">       
+        <ul>
+          <li className="brand">
+            <a href="/">Clicky Game</a>            
           </li>
-          <li className="nav-item">
-            <Link
-              to="/discover"
-              className={window.location.pathname === "/discover" ? "nav-link active" : "nav-link"}
-            >
-              Discover
-            </Link>
+          <li className="">
+            <a>Click an image to begin!</a>            
           </li>
-          <li className="nav-item">
-            <Link
-              to="/search"
-              className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
-            >
-              Search
-            </Link>
+          <li className="">
+            <a>Score: 0 | Top Score: 0</a>            
           </li>
-          <li className="nav-item">
-            <Link
-              to="/liked"
-              className={window.location.pathname === "/liked" ? "nav-link active" : "nav-link"}
-            >
-              Liked
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/disliked"
-              className={window.location.pathname === "/disliked" ? "nav-link active" : "nav-link"}
-            >
-              Disliked
-            </Link>
-          </li>
-        </ul>
-      </div>
+        </ul>      
     </nav>
+    </div>
   );
-}
 
-export default Navbar;
+
+
