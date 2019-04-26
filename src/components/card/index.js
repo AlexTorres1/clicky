@@ -4,13 +4,13 @@ import "./style.css";
 import { Card, Container, Row, Col } from 'react-bootstrap';
 
 
-const ImageCard = (props) => (
-  <Col lg={4}>
-  <Card>
-  <Card.Img variant="top" src={props.image} />    
+export const ImageCard = (props) => (
+  <Col lg={4} >
+  <Card >
+  <Card.Img variant="top" src={props.image} onClick = {props.onClick} />    
   </Card>
   </Col>
 );
 
-export default ImageCard;
+
 

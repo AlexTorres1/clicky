@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Navbar } from "./components/navbar"
-import ImageCard from "./components/card"
+import { ImageCard } from "./components/card"
 import Footer from "./components/footer"
 import {BrowserRouter as Router} from "react-router-dom"
 import Button from 'react-bootstrap/Button'; 
 import { ImageContainer } from "./components/container"
 import cards from "./cards.json";
+
 
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
   }
 
   handleClick = () => {
+    
     alert("I have been clicked");
     console.log("clicked")
   }
@@ -25,13 +27,12 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        <Navbar />   
+        <Navbar /> 
         <ImageContainer>
           {this.state.cards.map(card => {
-            return <ImageCard image={card.image} onClick = {this.handleClick} />
+            return <ImageCard onClick = {this.handleClick} image={card.image}  />
           })};
-        </ImageContainer>
-        
+        </ImageContainer>        
       </div>
       </Router>
     );
